@@ -1,50 +1,96 @@
-# 💝 Valentine's Day Website 2026 💝
+// ============================================
+// Valentine's Day Interactive Page Configuration
+// ============================================
 
-[![Stars](https://img.shields.io/github/stars/End2EndAI/valentine-website-2025?style=social)](https://github.com/End2EndAI/valentine-website-2025/stargazers)
-[![Fork](https://img.shields.io/github/forks/End2EndAI/valentine-website-2025?style=social)](https://github.com/End2EndAI/valentine-website-2025/fork)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Support me](https://img.shields.io/badge/Support-Stripe-blue)](https://buy.stripe.com/bJefZa8Le7fvgDe3ric7u00)
+const config = {
+  // Recipient information
+  recipientName: "Богдан",
+  pageTitle: "Для [Козлика] 💝",
 
-A beautiful, interactive Valentine's Day website generator to ask your special someone to be your Valentine! Create your own personalized version in minutes. Perfect for Valentine's Day 2026! 💝
-Follow below the tutorial how to custom the website and get your custom URL and access your website on the internet from everywhere !
+  // Background style: soft violet gradient
+  background: "linear-gradient(135deg, #f9f0ff, #e9d4ff, #d9b3ff)",
 
-🌟 **[Live Demo](https://end2endai.github.io/valentine-website-2025)** | 🚀 **[Quick Start](#-quick-start-guide)** | 🌐 **[Deploy Your Website](#4-make-it-live-get-your-online-website-url)**
+  // Button styling: warm blue, rounded corners
+  buttonStyle: {
+    backgroundColor: "#add8e6",       // light, warm blue
+    hoverColor: "#9ac0cd",            // slightly darker on hover
+    borderRadius: "30px",
+    padding: "12px 30px",
+    fontSize: "1.2rem",
+    border: "none",
+    color: "#2c3e50",
+    fontWeight: "600",
+    boxShadow: "0 4px 6px rgba(0,0,0,0.1)",
+    cursor: "pointer",
+    transition: "all 0.3s ease"
+  },
 
-## 🌟 Share The Love
+  // Animation settings for floating hearts
+  animation: {
+    hearts: {
+      enabled: true,
+      duration: 15,          // seconds
+      offset: 50,           // pixel displacement
+      amount: 30,           // number of hearts
+      emoji: "❤️",
+      colors: ["#ffb6c1", "#ff69b4", "#ffc0cb", "#ffe4e1"]
+    }
+  },
 
-If you liked it, please :
-- ⭐ Star this repository if you like it
-- 🔄 Fork it to create your own version
-- 🔥 Like and follow on instagram for more websites : [Instagram](https://www.instagram.com/reel/DFh3ZaxtrYX/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==)
+  // Questions and answer options
+  questions: [
+    {
+      id: 1,
+      text: "Я тебе нравлюсь?",
+      answers: ["Да", "Нет"],
+      secretAnswer: {
+        trigger: "Да",
+        message: "А я тебя люблю! ❤️"
+      }
+    },
+    {
+      id: 2,
+      text: " А точно?",
+      answers: ["110%", "да, конечно", "несомненно"]
+    },
+    {
+      id: 3,
+      text: "Будешь моей Валентинкой...?",
+      answers: ["Да!", "Нет"]
+    }
+  ],
 
-## ✨ Features
-- 💖 Floating hearts and bears
-- 🎵 Custom music
-- 📏 Love meter that goes beyond 100%
-- 🏃‍♂️ Playful buttons that run away
-- 🎁 Hidden answer for the first question, "Do you like me?"
-- 🎉 Grand celebration when they say yes!
+  // Final congratulation screen (shown after "Да!" on last question)
+  finalMessage: {
+    title: "Ура! Я самый счастливый человек... 🥰. Я тебя очень сильно люблю",
+    message: "Беги за подарком 🎁",
+    emojis: "🎁💖🤗💝💋❤️💕",
+    backgroundColor: "rgba(255, 220, 240, 0.9)", // soft pink overlay
+    textColor: "#4a1e4a"
+  },
 
-## 🚀 Quick Start Guide
+  // Background music settings
+  music: {
+    enabled: true,
+    autoplay: true,
+    url: "YOUR_CLOUDINARY_URL_HERE", // Replace with actual Cloudinary audio URL
+    volume: 0.5,
+    loop: true
+  },
 
-### 1. Get Your Own Copy
-1. Click the "Fork" button at the top right of this page or [click here](https://github.com/End2EndAI/valentine-website-2025/fork)
-2. Wait a few seconds while GitHub creates your copy
-3. You now have your own version of the code!
+  // Additional styling options (optional)
+  theme: {
+    primaryColor: "#add8e6",
+    secondaryColor: "#fff0f5",
+    accentColor: "#ffb7c5",
+    textColor: "#3b2e3b",
+    headerFont: "'Great Vibes', cursive, sans-serif",
+    bodyFont: "'Montserrat', sans-serif"
+  }
+};
 
-Note: Make sure you're logged into your GitHub account. If you don't have one, you can [create a free account here](https://github.com/signup).
-
-### 2. Customize for Your Valentine
-
-#### Easy Way (Recommended)
-1. In your new repository, click on `config.js`
-2. Click the pencil icon (✏️) to edit
-3. Change the values to personalize your website
-4. Click "Commit changes" at the bottom
-
-Here's what you can customize in `config.js`:
-```javascript
-// Basic Information
+// Export configuration for use in main script
+export default config;// Basic Information
 valentineName: "Jade"                    // Your Valentine's name
 pageTitle: "Will You Be My Valentine? 💝" // Browser tab title
 
